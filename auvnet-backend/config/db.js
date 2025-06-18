@@ -1,0 +1,17 @@
+const mongoose=require("mongoose");
+require('dotenv').config;
+
+const connectDB=async()=>{
+    try{
+        await mongoose.connect("mongodb://samahsalah2555:samahsalah2555@ac-tn5nus4-shard-00-00.72htp4v.mongodb.net:27017,ac-tn5nus4-shard-00-01.72htp4v.mongodb.net:27017,ac-tn5nus4-shard-00-02.72htp4v.mongodb.net:27017/?replicaSet=atlas-6xtx4k-shard-0&ssl=true&authSource=admin" ,{
+          
+        })
+        console.log('database is connected');
+        
+    }catch(error)
+    {
+        console.log('database is not connected ' , error.message);
+        
+    }
+}
+module.exports=connectDB
